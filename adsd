@@ -1,0 +1,38 @@
+
+import java.util.*;
+
+public class Main {
+
+    public static int valienMaara(long[] taulukko, long k) {
+        int a =0;
+        int X =0;
+        long s =0;
+        for(int i =0; i < taulukko.length; i++){
+            s += taulukko[i];
+            if(s == k){
+                X++;
+                s = 0;
+                a++;
+                i =a-1;             
+            }
+            
+            if(s>k){
+                a++;
+                i = a-1;
+                s =0;
+               
+                
+            }
+            
+            
+        }
+        return X;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(valienMaara(new long[]{1, 1, 1, 1}, 4));
+        System.out.println(valienMaara(new long[]{1, 1, 1, 1}, 1));
+        System.out.println(valienMaara(new long[]{1, 2, 3, 4}, 3));
+        System.out.println(valienMaara(new long[]{1, 3, 1, 2}, 3));
+    }
+}
